@@ -1,4 +1,4 @@
-const db = require('./database-connection');
+const db = require('./database‐connection.js');
 module.exports = {
     getAllHouse() {
         return db('house')
@@ -10,7 +10,7 @@ module.exports = {
         return db('bills')
     },
     getAllChat() {
-        return db('chat)
+        return db('chat')
     },
     getAllBulletin() {
         return db('bulletin-board')
@@ -27,7 +27,7 @@ module.exports = {
         return db('chat').innerJoin('members', 'chat.members_id', 'members.id').innerJoin('house', 'chat.house_id', 'house.id').select(
             'chat.*',
             'members.first_name',
-            'members.last_name'
+            'members.last_name',
             'users.avatar'
         ).where('house_id', id)
     },
