@@ -8,31 +8,31 @@ exports.seed = function(knex, Promise) {
         {
           name: 'Rent',
           amount: 2100,
-          date: '',
+          date: '1900-01-01',
           house_id: 1
         },
         {
           name: 'Power',
           amount: 360,
-          date: '',
+          date: '1900-01-01',
           house_id: 1
         },
         {
           name: 'Water',
           amount: 120,
-          date: '',
+          date: '1900-01-01',
           house_id: 1
         },
         {
           name: 'Internet',
           amount: 210,
-          date: '',
+          date: '1900-01-01',
           house_id: 1
         },
         {
           name: 'Gas',
           amount: 100,
-          date: '',
+          date: '1900-01-01',
           house_id: 1
         },
       ]);

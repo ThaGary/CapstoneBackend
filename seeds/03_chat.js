@@ -7,38 +7,45 @@ exports.seed = function(knex, Promise) {
       return knex('chat').insert([
         {
           message: 'hey everyone',
-          datetime: '',
-          member_id: 1
+          datetime: '1900-01-01 00:00:01',
+          members_id: 1,
+          house_id: 1
         },
         {
           message: 'hey everyone',
-          datetime: '',
-          member_id: 4
+          datetime: '1900-01-01 00:00:02',
+          members_id: 4,
+          house_id: 1
         },
         {
           message: 'hey everyone',
-          datetime: '',
-          member_id: 6
+          datetime: '1900-01-01 00:00:03',
+          members_id: 6,
+          house_id: 1
         },
         {
           message: 'hey everyone',
-          datetime: '',
-          member_id: 3
+          datetime: '1900-01-01 00:00:04',
+          members_id: 3,
+          house_id: 1
         },
         {
           message: 'hey everyone',
-          datetime: '',
-          member_id: 2
+          datetime: '1900-01-01 00:00:05',
+          members_id: 2,
+          house_id: 1
         },
         {
           message: 'hey everyone',
-          datetime: '',
-          member_id: 5
+          datetime: '1900-01-01 00:00:06',
+          members_id: 5,
+          house_id: 1
         },
         {
           message: 'neat',
-          datetime: '',
-          member_id: 1
+          datetime: '1900-01-01 00:00:07',
+          members_id: 1,
+          house_id: 1
         },
       ]);
     });
