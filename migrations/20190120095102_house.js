@@ -4,9 +4,9 @@ exports.up = function(knex, Promise) {
          house.string('house_name')
          house.string('password')
          house.integer('number_housemates')
-         house.date('trash')
+         house.string('trash_day')
     });
 };
 exports.down = function(knex, Promise) {
-    return knex.schema.dropTableIfExists('house’);
+    return knex.schema.dropTableIfExists('house');
 };
