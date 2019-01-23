@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
          house.string('password')
          house.integer('number_housemates')
          house.string('trash_day')
+         house.integer('zipcode')
     });
 };
 exports.down = function(knex, Promise) {
