@@ -27,7 +27,7 @@ module.exports = {
         return db('bulletin-board')
             .where('house_id', id)
     },
-    getAllChatById(id) {
+    getAllChatByHouseId(id) {
         return db('chat').innerJoin('members', 'chat.members_id', 'members.id').innerJoin('house', 'chat.house_id', 'house.id').select(
             'chat.*',
             'members.*',

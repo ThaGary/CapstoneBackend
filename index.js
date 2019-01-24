@@ -4,8 +4,21 @@ const port = process.env.PORT || 3003
 const queries = require('./queries')
 const config = require('./knexfile')
 const bodyParser = require('body-parser')
-var cors = require('cors')
- 
+const cors = require('cors')
+
+const server = app.listen(3001, function() {
+    console.log('server running on port 3001');
+});
+
+const io = require('socket.io')(server);
+
+io.on('connection', function(socket) {
+    console.log(socket.id)
+    socket.on('SEND_MESSAGE', function(data) {
+        io.emit('MESSAGE', data)
+    });
+});
+
 app.use(cors())
 app.use(bodyParser.json())
 
@@ -25,7 +38,7 @@ app.get('/chat', (req, res) => {
     queries.getAllChat().then(chat => res.json(chat))
 })
 app.get('/chat/:id', (req, res) => {
-    queries.getAllChatById(req.params.id).then(chat => res.json(chat))
+    queries.getAllChatByHouseId(req.params.id).then(chat => res.json(chat))
 })
 app.get('/house/:id', (req, res) => {
     queries.getHouseSettings(req.params.id).then(chat => res.json(chat))
