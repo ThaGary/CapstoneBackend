@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const server = app.listen(3001, function() {
-    console.log('server running on port 3001');
+    console.log('server running on port 3003');
 });
 
 const io = require('socket.io')(server);
@@ -31,8 +31,14 @@ app.get('/bills', (req, res) => {
 app.get('/bills/:id', (req, res) => {
     queries.getAllBillsByHouse(req.params.id).then(bills => res.json(bills))
 })
+app.get('/mybills/:id', (req, res) => {
+    queries.getAllBillsByMember(req.params.id).then(bills => res.json(bills))
+})
 app.get('/members', (req, res) => {
     queries.getAllMembers().then(members => res.json(members))
+})
+app.get('/house/members/:id', (req, res) => {
+    queries.getAllHouseMembers(req.params.id).then(members => res.json(members))
 })
 app.get('/chat', (req, res) => {
     queries.getAllChat().then(chat => res.json(chat))
@@ -41,7 +47,7 @@ app.get('/chat/:id', (req, res) => {
     queries.getAllChatByHouseId(req.params.id).then(chat => res.json(chat))
 })
 app.get('/house/:id', (req, res) => {
-    queries.getHouseSettings(req.params.id).then(chat => res.json(chat))
+    queries.getHouseInfo(req.params.id).then(chat => res.json(chat))
 })
 app.get('/bulletin', (req, res) => {
     queries.getAllBulletin().then(bulletin => res.json(bulletin))
