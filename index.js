@@ -50,7 +50,10 @@ app.get('/house/:id', (req, res) => {
     queries.getHouseInfo(req.params.id).then(chat => res.json(chat))
 })
 app.get('/bulletin', (req, res) => {
-    queries.getAllBulletin().then(bulletin => res.json(bulletin))
+    queries.getAllBulletin(req.params.id).then(bulletin => res.json(bulletin))
+})
+app.get('/bulletin/:id', (req, res) => {
+    queries.getAllPost(req.params.id).then(bulletin => res.json(bulletin))
 })
 app.post('/house', (req, res) => {
     queries.createHouse(req.body).then(house => res.json(house))
