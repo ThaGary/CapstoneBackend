@@ -1,8 +1,8 @@
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('chat', (chat) => {
          chat.increments('id')
-         chat.string('message')
-         chat.datetime('datetime', 6).defaultTo(knex.fn.now(6))
+         chat.string('text')
+         chat.string('stamp')
          chat.integer('members_id').references('id').inTable('members')
          chat.integer('house_id').references('id').inTable('house')
     });

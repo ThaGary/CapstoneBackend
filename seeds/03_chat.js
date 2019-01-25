@@ -6,44 +6,44 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('chat').insert([
         {
-          message: 'hey everyone',
-          datetime: '1900-01-01 00:00:01',
+          text: 'hey everyone',
+          stamp: 'Jan 21, 2019',
           members_id: 1,
           house_id: 1
         },
         {
-          message: 'hey everyone',
-          datetime: '1900-01-01 00:00:02',
+          text: 'hellyeah brother',
+          stamp: 'Jan 21, 2019',
           members_id: 4,
           house_id: 1
         },
         {
-          message: 'hey everyone',
-          datetime: '1900-01-01 00:00:03',
+          text: 'what are those',
+          stamp: 'Jan 21, 2019',
           members_id: 6,
           house_id: 1
         },
         {
-          message: 'hey everyone',
-          datetime: '1900-01-01 00:00:04',
+          text: 'howdy partner',
+          stamp: 'Jan 21, 2019',
           members_id: 3,
           house_id: 1
         },
         {
-          message: 'hey everyone',
-          datetime: '1900-01-01 00:00:05',
+          text: 'test text',
+          stamp: 'Jan 21, 2019',
           members_id: 2,
           house_id: 1
         },
         {
-          message: 'hey everyone',
-          datetime: '1900-01-01 00:00:06',
+          text: 'lol xd',
+          stamp: 'Jan 21, 2019',
           members_id: 5,
           house_id: 1
         },
         {
-          message: 'neat',
-          datetime: '1900-01-01 00:00:07',
+          text: 'software that links the design, engineering, manufacturing and the construction process, providing the industry a unique and disruptive technology that promises',
+          stamp: 'Jan 21, 2019',
           members_id: 1,
           house_id: 1
         },
