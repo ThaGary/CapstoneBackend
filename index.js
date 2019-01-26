@@ -65,6 +65,9 @@ app.put('/house/:id', (req, res) => {
     queries.updateHouse(req.params.id, req.body).then(updateHouse => res.json(updateHouse))
 })
 app.put('/paid/:id', (req, res) => {
+    queries.updatePaid(req.params.id, req.body).then(updateBills => res.json(updateBills))
+})
+app.put('/bills/1/:id', (req, res) => {
     queries.updateBills(req.params.id, req.body).then(updateBills => res.json(updateBills))
 })
 app.put('/bulletin/:id', (req, res) => {

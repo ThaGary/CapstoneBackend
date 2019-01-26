@@ -28,8 +28,8 @@ module.exports = {
             .where('house.id', id)
     },
     getHouseInfo(id) {
-        return db('bills').innerJoin('house', 'bills.house_id', 'house.id').innerJoin('members', 'bills.members_id', 'members.id').select('house.*','bills.name', 'bills.icon', 'bills.amount', 'bills.day', 'bills.icon_color', 'members.first_name', 'members.last_name', 'members.house_leader', 'members.house_id')
-            .where('bills.members_id', id)
+        return db('bills').innerJoin('house', 'bills.house_id', 'house.id').select('house.*','bills.name', 'bills.icon', 'bills.amount', 'bills.day', 'bills.icon_color')
+            .where('house.id', id)
     },
     getAllPost(id) {
         return db('bulletin-board')
@@ -58,12 +58,17 @@ module.exports = {
             .update(house)
             .returning('*')
     },
-    updateBills(id, paid) {
+    updatePaid(id, paid) {
         return db('paid')
             .where('id', id)
             .update(paid)
             .returning('*')
-            .catch(function(error) { console.error(error); })
+    },
+    updateBills(id, bills) {
+        return db('bills')
+            .where('id', id)
+            .update(bills)
+            .returning('*')
     },
     updateBulletin(id, bulletin) {
         return db('bulletin-board')
