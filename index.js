@@ -1,23 +1,20 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3003
+const fs = require('fs')
+const port = process.env.PORT || 3002
 const queries = require('./queries')
 const config = require('./knexfile')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-
-const server = app.listen(3001, function() {
-    console.log('server running on port 3003');
-});
-
-const io = require('socket.io')(server);
+const server = app.listen(3002)
+const io = require('socket.io')(server)
 
 io.on('connection', function(socket) {
-    console.log(socket.id)
+    console.log(socket.id, "<- Sockets")
     socket.on('SEND_MESSAGE', function(data) {
         io.emit('MESSAGE', data)
-    });
-});
+    })
+})
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -58,6 +55,9 @@ app.get('/bulletin/:id', (req, res) => {
 app.post('/house', (req, res) => {
     queries.createHouse(req.body).then(house => res.json(house))
 })
+app.post('/chat/:id', (req, res) => {
+    queries.AddChatMSG(req.params.id).then(house => res.json(house))
+})
 app.post('/member', (req, res) => {
     queries.createMember(req.body).then(member => res.json(member))
 })
@@ -79,5 +79,3 @@ app.delete('/bulletin/:id', (req, res) => {
 app.delete('/house/:id', (req, res) => {
     queries.deleteUser(req.params.id).then(res.sendStatus(204))
 })
-
-app.listen(port)

@@ -9,7 +9,7 @@ exports.seed = function(knex, Promise) {
           house_name: 'G House',
           password: '123456',
           number_housemates: 6,
-          trash_day: 'tuesday',
+          trash_day: 'Tue',
           zipcode: 80226
         },    
       ]);
