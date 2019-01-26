@@ -6,8 +6,6 @@ exports.up = function(knex, Promise) {
          bills.integer('amount')
          bills.integer('day')
          bills.string('icon_color')
-         bills.boolean('paid')
-         bills.integer('members_id').references('id').inTable('members')
          bills.integer('house_id').references('id').inTable('house')
     });
 };

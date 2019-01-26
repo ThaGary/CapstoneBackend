@@ -64,7 +64,7 @@ app.post('/member', (req, res) => {
 app.put('/house/:id', (req, res) => {
     queries.updateHouse(req.params.id, req.body).then(updateHouse => res.json(updateHouse))
 })
-app.put('/bills/:id', (req, res) => {
+app.put('/paid/:id', (req, res) => {
     queries.updateBills(req.params.id, req.body).then(updateBills => res.json(updateBills))
 })
 app.put('/bulletin/:id', (req, res) => {

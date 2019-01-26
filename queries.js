@@ -20,9 +20,8 @@ module.exports = {
             .where('house_id', id)
     },
     getAllBillsByMember(id) {
-        return db('members').innerJoin('house', 'members.house_id', 'house.id').innerJoin('bills', 'members.house_id', 'house.id').select('bills.*', 'house.number_housemates')
-            .where('members_id', id)
-            .where('members.id', id)
+        return db('bills').innerJoin('paid', 'bills.id', 'paid.bills_id').select('bills.*', 'paid.members_id', 'paid.paid')
+            .where('paid.members_id', id)
     },
     getAllHouseMembers(id) {
         return db('house').innerJoin('members', 'house.id', 'members.house_id').select('house.*', 'members.first_name', 'members.last_name', 'members.house_leader')
@@ -59,10 +58,10 @@ module.exports = {
             .update(house)
             .returning('*')
     },
-    updateBills(id, bills) {
-        return db('bills')
+    updateBills(id, paid) {
+        return db('paid')
             .where('id', id)
-            .update(bills)
+            .update(paid)
             .returning('*')
             .catch(function(error) { console.error(error); })
     },
