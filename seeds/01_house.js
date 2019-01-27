@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
       return knex('house').insert([
         {
           house_name: 'G House',
-          password: '123456',
+          house_password: '123456',
           number_housemates: 6,
           trash_day: 'Tue',
           zipcode: 80226

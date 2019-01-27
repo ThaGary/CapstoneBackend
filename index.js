@@ -34,6 +34,9 @@ app.get('/mybills/:id', (req, res) => {
 app.get('/members', (req, res) => {
     queries.getAllMembers().then(members => res.json(members))
 })
+app.get('/members/:id', (req, res) => {
+    queries.getAMember(req.params.id).then(members => res.json(members))
+})
 app.get('/house/members/:id', (req, res) => {
     queries.getAllHouseMembers(req.params.id).then(members => res.json(members))
 })
@@ -55,8 +58,8 @@ app.get('/bulletin/:id', (req, res) => {
 app.post('/house', (req, res) => {
     queries.createHouse(req.body).then(house => res.json(house))
 })
-app.post('/chat/:id', (req, res) => {
-    queries.AddChatMSG(req.params.id).then(house => res.json(house))
+app.post('/chat/', (req, res) => {
+    queries.addChatMSG(req.body).then(house => res.json(house))
 })
 app.post('/member', (req, res) => {
     queries.createMember(req.body).then(member => res.json(member))

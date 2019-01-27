@@ -19,6 +19,10 @@ module.exports = {
         return db('bills').innerJoin('house', 'bills.house_id', 'house.id').select('bills.*', 'house.number_housemates')
             .where('house_id', id)
     },
+    getAMember(id) {
+        return db('members')
+            .where('members.id', id)
+    },
     getAllBillsByMember(id) {
         return db('bills').innerJoin('paid', 'bills.id', 'paid.bills_id').select('bills.*', 'paid.members_id', 'paid.paid')
             .where('paid.members_id', id)
@@ -28,7 +32,7 @@ module.exports = {
             .where('house.id', id)
     },
     getHouseInfo(id) {
-        return db('bills').innerJoin('house', 'bills.house_id', 'house.id').select('house.*','bills.name', 'bills.icon', 'bills.amount', 'bills.day', 'bills.icon_color')
+        return db('bills').innerJoin('house', 'bills.house_id', 'house.id').select('bills.*','house.house_name','house.house_password','house.number_housemates', 'house.trash_day', 'house.zipcode')
             .where('house.id', id)
     },
     getAllPost(id) {
@@ -50,6 +54,11 @@ module.exports = {
     createHouse(newHouse){
         return db('house')
             .insert(newHouse)
+            .returning('*')
+    },
+    addChatMSG(newMSG){
+        return db('chat')
+            .insert(newMSG)
             .returning('*')
     },
     updateHouse(id, house) {
