@@ -47,7 +47,7 @@ app.get('/chat/:id', (req, res) => {
     queries.getAllChatByHouseId(req.params.id).then(chat => res.json(chat))
 })
 app.get('/house/:id', (req, res) => {
-    queries.getHouseInfo(req.params.id).then(chat => res.json(chat))
+    queries.getHouseInfo(req.params.id).then(house => res.json(house))
 })
 app.get('/bulletin', (req, res) => {
     queries.getAllBulletin(req.params.id).then(bulletin => res.json(bulletin))
@@ -58,11 +58,17 @@ app.get('/bulletin/:id', (req, res) => {
 app.post('/house', (req, res) => {
     queries.createHouse(req.body).then(house => res.json(house))
 })
+app.post('/bills', (req, res) => {
+    queries.newBill(req.body).then(bill => res.json(bill))
+})
 app.post('/chat/', (req, res) => {
-    queries.addChatMSG(req.body).then(house => res.json(house))
+    queries.addChatMSG(req.body).then(msg => res.json(msg))
 })
 app.post('/member', (req, res) => {
     queries.createMember(req.body).then(member => res.json(member))
+})
+app.post('/bulletin', (req, res) => {
+    queries.createBulletin(req.body).then(entry => res.json(entry))
 })
 app.put('/house/:id', (req, res) => {
     queries.updateHouse(req.params.id, req.body).then(updateHouse => res.json(updateHouse))

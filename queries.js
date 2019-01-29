@@ -24,7 +24,7 @@ module.exports = {
             .where('members.id', id)
     },
     getAllBillsByMember(id) {
-        return db('bills').innerJoin('paid', 'bills.id', 'paid.bills_id').select('bills.*', 'paid.members_id', 'paid.paid')
+        return db('bills').innerJoin('paid', 'bills.id', 'paid.bills_id').innerJoin('house', 'bills.house_id', 'house.id').select('bills.*', 'paid.members_id', 'paid.paid', 'house.number_housemates')
             .where('paid.members_id', id)
     },
     getAllHouseMembers(id) {
@@ -51,6 +51,11 @@ module.exports = {
             .insert(newMember)
             .returning('*')
     },
+    createBulletin(newEntry) {
+        return db('bulletin-board')
+            .insert(newEntry)
+            .returning('*')
+    },
     createHouse(newHouse){
         return db('house')
             .insert(newHouse)
@@ -59,6 +64,11 @@ module.exports = {
     addChatMSG(newMSG){
         return db('chat')
             .insert(newMSG)
+            .returning('*')
+    },
+    newBill(newBill){
+        return db('bills')
+            .insert(newBill)
             .returning('*')
     },
     updateHouse(id, house) {

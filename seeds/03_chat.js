@@ -12,7 +12,7 @@ exports.seed = function(knex, Promise) {
           house_id: 1
         },
         {
-          text: 'hellyeah brother',
+          text: 'hell yeah brother',
           stamp: 'Sun Jan 27 2019 00:52:19 GMT-0700 (Mountain Standard Time)',
           members_id: 4,
           house_id: 1
@@ -24,27 +24,27 @@ exports.seed = function(knex, Promise) {
           house_id: 1
         },
         {
-          text: 'howdy partner',
-          stamp: 'Sun Jan 27 2019 00:52:19 GMT-0700 (Mountain Standard Time)',
-          members_id: 3,
-          house_id: 1
-        },
-        {
-          text: 'test text',
-          stamp: 'Sun Jan 27 2019 00:52:19 GMT-0700 (Mountain Standard Time)',
-          members_id: 2,
-          house_id: 1
-        },
-        {
-          text: 'lol xd',
-          stamp: 'Sun Jan 27 2019 00:52:19 GMT-0700 (Mountain Standard Time)',
+          text: 'the worlds longest yeah boiiiiiiii++',
+          stamp: 'Sun Jan 26 2019 12:52:19 GMT-0700 (Mountain Standard Time)',
           members_id: 5,
           house_id: 1
         },
         {
-          text: 'software that links the design, engineering, manufacturing and the construction process, providing the industry a unique and disruptive technology that promises',
+          text: 'wow this is pretty cool Gary',
           stamp: 'Sun Jan 27 2019 00:52:19 GMT-0700 (Mountain Standard Time)',
           members_id: 1,
+          house_id: 1
+        },
+        {
+          text: 'what is everyone doing today',
+          stamp: 'Sun Jan 28 2019 11:52:19 GMT-0700 (Mountain Standard Time)',
+          members_id: 5,
+          house_id: 1
+        },
+        {
+          text: 'Idk? what are you doin',
+          stamp: 'Sun Jan 27 2019 00:52:19 GMT-0700 (Mountain Standard Time)',
+          members_id: 3,
           house_id: 1
         },
       ]);

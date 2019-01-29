@@ -16,7 +16,7 @@ exports.seed = function(knex, Promise) {
           house_id: 1
         },
         {
-          title: 'recycling',
+          title: 'Recycling',
           entry: 'fold your boxes up',
           house_id: 1
         }, 
