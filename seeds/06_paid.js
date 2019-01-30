@@ -63,7 +63,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           members_id: 3,
-          bills_id: 5
+          bills_id: 1
         },
       ]);
     });
