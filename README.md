@@ -28,5 +28,7 @@
 # About Capstone
 * Capstones are a 10 day event at Galvanize where we are task with learning a new tech. I decided to use Vue, Quasar, and Socket.io! This was a lot of fun for me to dive into a new framework.
 
+## Link to Frontend repo
+* https://github.com/ThaGary/CapstoneFrontend
 
 #### Created By Gary Anderson for g102 Capstone
