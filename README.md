@@ -1,6 +1,4 @@
 ![imgur RoomEase](https://i.imgur.com/WyYpXGS.png?1)
-* Chromatic audio tuner in React Native.
-* Renders colors for each key in order to help artists learn to stay in tune.
 
 # Demo
 
